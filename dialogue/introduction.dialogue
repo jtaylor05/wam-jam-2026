@@ -7,5 +7,5 @@ Narrator: But… you never knew Tessa to have allergies… right? All of her wor
 Narrator: The journey was but a train ride away. Perhaps it was a hasty decision, but you are here: the scene of the crime. There is no turning back now. 
 Narrator: It feels as though you are taking your first breath of fresh air after weeks of inhaling dust and old memories. The property is more devoid of life than you expected for the end of May, but that would hopefully make your job a lot easier.
 Narrator: You spent days pouring over local news clippings about Tessa’s passing, and the only thing that caught your eye was the lack of comments from staff and the place of death: the Retreat’s greenhouse. The staff would be who you needed to talk to.
-# do move scene to lobby
+do scene.to_lobby()
 => END

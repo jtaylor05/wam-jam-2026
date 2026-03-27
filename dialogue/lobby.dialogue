@@ -8,7 +8,7 @@ Narrator: Kept in honor of Helen, our first receptionist upon the Hotel’s open
 
 ~ bell
 if not GameState.has_state("bell_dings")
-	do GameState.set_state_value("bell_dings", 0)
+	do GameState.set_state_value("bell_dings", 1)
 match GameState.get_state_value("bell_dings")
 	when 1
 		Narrator: It dings.
@@ -18,7 +18,7 @@ match GameState.get_state_value("bell_dings")
 		Narrator: It dings. The boy looks at you, peeved.
 	when 4
 		Narrator: The boy takes the bell and puts it somewhere beneath the desk, out of reach. 
-		Vincenzo: Can I help you? => vincenzo
+		Vincenzo: Can I help you? =>< vincenzo
 	when >= 5
 		do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings") + 1)
 		=> END
