@@ -1,0 +1,49 @@
+~ typewriter
+Narrator: The 1865 Pterotype. Invented by John Pratt. Gifted to George Primrose in 1870. Now property of the Primrose Estate.
+=> END
+
+~ cash_register
+Narrator: Kept in honor of Helen, our first receptionist upon the Hotel’s opening in 1967.
+=> END
+
+~ bell
+if not GameState.has_state("bell_dings")
+	do GameState.set_state_value("bell_dings", 0)
+match GameState.get_state_value("bell_dings")
+	when 1
+		Narrator: It dings.
+	when 2
+		Narrator: It dings. This time more annoyingly.
+	when 3
+		Narrator: It dings. The boy looks at you, peeved.
+	when 4
+		Narrator: The boy takes the bell and puts it somewhere beneath the desk, out of reach. 
+		Vincenzo: Can I help you? => vincenzo
+	when >= 5
+		do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings") + 1)
+		=> END
+do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings") + 1)
+=> END
+
+~ vincenzo
+Narrator: Vincenzo tries his best to fix his posture upon your approach. 
+Vincenzo: Hi there, welcome to Primrose Holiday Retreat. What can I do for you?
+Narrator: You cross your arms and take a deep breath. 
+Rin: I’m a detective hired to investigate the circumstances around Tessa’s death. It’s for her family, you know? I understand they declared it an allergic reaction, but I need to have some things to tell her parents. Do you mind if I ask a few questions? 
+Narrator: A convincing enough lie, you think. But Vincenzo’s shoulders slouch, as though he’s heard the spiel before. 
+
+~ questions
+Vincenzo: The cops already asked me a bunch of stuff, but sure I can try and answer yours.
+
+- Could you tell me what you know about the recent accident that occurred here?
+	Vincenzo: Not much, only that it was over in the greenhouse. I’ve never seen it myself, but I’d probably ask anyone else who’s worked here longer than me, which is everyone.
+	=> questions
+
+- Where were you at the time of death?
+	Vincenzo: Just here at the desk. Where else?
+	=> questions
+
+- Is there any chance I could have the key to the suite Tessa stayed in?
+	Vincenzo: Sure, why not? No one is staying up there for another month anyway.
+	do GameState.set_state_value("key_323", true)
+	=> END

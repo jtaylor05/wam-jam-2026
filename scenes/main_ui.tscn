@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnimkqakl20md"]
+
+[ext_resource type="Script" uid="uid://m7wqp7mai187" path="res://scripts/main_ui.gd" id="1_513t2"]
+[ext_resource type="PackedScene" uid="uid://b3mv6flbska53" path="res://scenes/main_map.tscn" id="1_fnul3"]
+[ext_resource type="Theme" uid="uid://0a1yt3dgu5k0" path="res://resources/main_theme.tres" id="2_e6fyy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6a7c"]
+font_size = 45
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainUi" type="CanvasLayer"]
+process_mode = 3
+layer = 101
+script = ExtResource("1_513t2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("2_e6fyy")
+
+[node name="ButtonContainer" type="PanelContainer" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ButtonContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ButtonContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_j6a7c")
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RESUME"
+
+[node name="MapButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MAP"
+
+[node name="MenuButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="QuitButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[node name="MapContainer" type="MarginContainer" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MapContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Control/MapContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 30
+text = "CLOSE"
+
+[node name="AreaInstance" parent="Control/MapContainer/VBoxContainer" instance=ExtResource("1_fnul3")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="resume"]
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/MapButton" to="." method="open_map"]
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/MenuButton" to="." method="to_menu"]
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="quit"]
+[connection signal="pressed" from="Control/MapContainer/VBoxContainer/CloseButton" to="." method="close_map"]

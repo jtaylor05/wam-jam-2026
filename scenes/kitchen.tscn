@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://3k0hfi2i86a1"]
+
+[ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_2b6py"]
+[ext_resource type="Resource" uid="uid://bxxo4dfwytb66" path="res://dialogue/test.dialogue" id="2_bems3"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_v3ycp"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="4_bems3"]
+
+[sub_resource type="Gradient" id="Gradient_kf68i"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.6039216)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8g3do"]
+gradient = SubResource("Gradient_kf68i")
+
+[node name="AreaInstance" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2b6py")
+dialogue = ExtResource("2_bems3")
+start_name = "start"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8g3do")
+
+[node name="Interface" parent="." instance=ExtResource("3_v3ycp")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MainUi" parent="." instance=ExtResource("4_bems3")]
+layout_mode = 1

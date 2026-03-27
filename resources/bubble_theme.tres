@@ -1,0 +1,99 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://owvt60nakk5p"]
+
+[ext_resource type="StyleBox" uid="uid://dy766y3eoyppf" path="res://resources/normal_button_style_box.tres" id="1_75gnc"]
+[ext_resource type="FontFile" uid="uid://cuopo14vj8blq" path="res://resources/TT Rounds Neue Trial Black.ttf" id="2_kxmo5"]
+[ext_resource type="StyleBox" uid="uid://bgfxhc8x1vc5y" path="res://resources/theme_style_box.tres" id="3_sc6n0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x127s"]
+bg_color = Color(0.3553134, 0.3553136, 0.35531357, 1)
+skew = Vector2(0.05, 0)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 2
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjhx0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u427p"]
+bg_color = Color(0.46229059, 0.46229064, 0.4622904, 1)
+skew = Vector2(0.05, 0)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 2
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rtxy"]
+bg_color = Color(0.35906893, 0.35906914, 0.35906908, 1)
+skew = Vector2(0.05, 0)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 2
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnc4k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x127s"]
+
+[resource]
+Button/font_sizes/font_size = 30
+Button/styles/disabled = SubResource("StyleBoxFlat_x127s")
+Button/styles/focus = SubResource("StyleBoxEmpty_qjhx0")
+Button/styles/hover = SubResource("StyleBoxFlat_u427p")
+Button/styles/normal = ExtResource("1_75gnc")
+Button/styles/pressed = SubResource("StyleBoxFlat_7rtxy")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("2_kxmo5")
+Label/styles/focus = SubResource("StyleBoxFlat_vnc4k")
+Label/styles/normal = SubResource("StyleBoxEmpty_x127s")
+Panel/styles/panel = ExtResource("3_sc6n0")
+PanelContainer/styles/panel = ExtResource("3_sc6n0")
+RichTextLabel/font_sizes/bold_font_size = 28
+RichTextLabel/font_sizes/bold_italics_font_size = 28
+RichTextLabel/font_sizes/italics_font_size = 28
+RichTextLabel/font_sizes/mono_font_size = 28
+RichTextLabel/font_sizes/normal_font_size = 28
