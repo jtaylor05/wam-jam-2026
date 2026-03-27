@@ -72,7 +72,7 @@ expand_margin_bottom = 2.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x127s"]
 
 [resource]
-Button/font_sizes/font_size = 30
+Button/font_sizes/font_size = 25
 Button/styles/disabled = SubResource("StyleBoxFlat_x127s")
 Button/styles/focus = SubResource("StyleBoxEmpty_qjhx0")
 Button/styles/hover = SubResource("StyleBoxFlat_u427p")

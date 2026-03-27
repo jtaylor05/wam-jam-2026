@@ -21,10 +21,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://scripts/game_state.gd"
 AudioController="*res://scripts/audio_controller.gd"
 
-[display]
-
-window/size/mode=3
-
 [dotnet]
 
 project/assembly_name="WamJam2026"

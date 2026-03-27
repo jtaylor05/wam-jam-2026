@@ -16,7 +16,8 @@ func _play_queue() -> void:
 	while _audio_queue.size() > 0:
 		var successful = _play_on_worker(_audio_queue[0])
 		if successful:
-			_audio_queue.pop_front()
+			var stream = _audio_queue.pop_front()
+			print("stream %s played" % [stream.tag])
 		else:
 			break
 	get_tree().create_timer(0.1).timeout.connect(_play_queue)
@@ -30,6 +31,7 @@ func _play_on_worker(stream_data : StreamData) -> bool:
 		return true
 	if _worker_pool.size() < MAX_WORKERS:
 		var worker : AudioWorker = AudioWorker.new(stream_data.stream, WORKER_TIMEOUT, stream_data.tag)
+		add_child(worker)
 		_active_workers.append(worker)
 		worker.finished.connect(func():
 			_active_workers.erase(worker)
@@ -42,9 +44,9 @@ func _play_on_worker(stream_data : StreamData) -> bool:
 		return true
 	return false
 
-func queue_audio_file(audio_file : StringName, tag : String = "", bus : StringName = &"Master", ) -> void:
+func queue_audio_file(audio_file : StringName, tag : String = "", bus : StringName = &"Master") -> void:
 	var stream : AudioStream = load(audio_file)
-	queue_audio_stream(stream, tag)
+	queue_audio_stream(stream, tag, bus)
 
 func queue_audio_stream(audio_stream : AudioStream, tag : String = "", bus : StringName = &"Master") -> void:
 	_audio_queue.append(StreamData.new(audio_stream, tag, bus))
