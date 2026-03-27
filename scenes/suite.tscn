@@ -32,9 +32,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
+[node name="MainUi" parent="." instance=ExtResource("4_1t7l4")]
+visible = false
+
 [node name="Interface" parent="." instance=ExtResource("3_g64o4")]
 unique_name_in_owner = true
 visible = false
-
-[node name="MainUi" parent="." instance=ExtResource("4_1t7l4")]
-layout_mode = 1

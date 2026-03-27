@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxlfoddkgm8mc"]
+
+[ext_resource type="Shader" uid="uid://cncyv3ie164o1" path="res://shaders/highlight.gdshader" id="1_eia5g"]
+[ext_resource type="Script" uid="uid://b06noknju4son" path="res://scripts/object_highlighted.gd" id="2_cosjs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cosjs"]
+resource_local_to_scene = true
+shader = ExtResource("1_eia5g")
+shader_parameter/shine = false
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_angle = -50.0
+shader_parameter/shine_duration = 2.0
+shader_parameter/shine_speed = 800.0
+shader_parameter/shine_width = 15.0
+
+[node name="ObjectHighlighted" type="TextureRect"]
+material = SubResource("ShaderMaterial_cosjs")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_cosjs")
+
+[connection signal="mouse_entered" from="." to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_mouse_exited"]

@@ -28,6 +28,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
+[node name="LobbyButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 82.0
+offset_right = 152.0
+offset_bottom = 90.0
+text = "Lobby"
+
+[node name="KitchenButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 262.0
+offset_top = 310.0
+offset_right = 330.0
+offset_bottom = 341.0
+text = "Kitchen"
+
+[node name="GreenhouseButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 480.0
+offset_top = 93.0
+offset_right = 580.0
+offset_bottom = 124.0
+text = "Greenhouse"
+
+[node name="SuiteButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 762.0
+offset_top = 142.0
+offset_right = 811.0
+offset_bottom = 173.0
+text = "Suite"
+
+[node name="BasementButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 707.0
+offset_top = 375.0
+offset_right = 792.0
+offset_bottom = 406.0
+text = "Basement"
+
 [node name="Interface" parent="." instance=ExtResource("3_kdyc3")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="pressed" from="LobbyButton" to="." method="open_lobby"]
+[connection signal="pressed" from="KitchenButton" to="." method="open_kitchen"]
+[connection signal="pressed" from="GreenhouseButton" to="." method="open_greenhouse"]
+[connection signal="pressed" from="SuiteButton" to="." method="open_suite"]
+[connection signal="pressed" from="BasementButton" to="." method="open_basement"]

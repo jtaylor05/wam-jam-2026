@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lm00dmqrsn8g"]
+[gd_scene load_steps=6 format=3 uid="uid://lm00dmqrsn8g"]
 
-[ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_nvvsg"]
+[ext_resource type="Script" uid="uid://dwfqxjk4txc06" path="res://scripts/scene_script_instances/introduction.gd" id="1_e3kje"]
 [ext_resource type="Resource" uid="uid://c0lsafnb1xd7w" path="res://dialogue/introduction.dialogue" id="2_nvvsg"]
-[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="3_e7oap"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="4_k15ss"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
@@ -19,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nvvsg")
+script = ExtResource("1_e3kje")
 dialogue = ExtResource("2_nvvsg")
 start_name = "start"
 
@@ -31,9 +30,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
-
-[node name="MainUi" parent="." instance=ExtResource("3_e7oap")]
-visible = false
 
 [node name="Interface" parent="." instance=ExtResource("4_k15ss")]
 unique_name_in_owner = true
