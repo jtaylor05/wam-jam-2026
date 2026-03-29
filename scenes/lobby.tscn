@@ -69,9 +69,19 @@ offset_right = 860.0
 offset_bottom = 86.0
 text = "Cash Register"
 
+[node name="VincentButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 192.0
+offset_right = 627.0
+offset_bottom = 223.0
+text = "Vincent
+"
+
 [connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
 [connection signal="pressed" from="BellButton" to="." method="_on_bell_pressed"]
 [connection signal="pressed" from="TypewriterButton" to="." method="_on_typewriter_pressed"]
 [connection signal="pressed" from="CashRegisterButton" to="." method="_on_cash_register_pressed"]
+[connection signal="pressed" from="VincentButton" to="." method="_on_vincent_pressed"]
 
 [editable path="GameUi"]

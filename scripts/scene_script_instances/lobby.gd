@@ -21,3 +21,7 @@ func _on_typewriter_pressed() -> void:
 
 func _on_cash_register_pressed() -> void:
 	%Interface.start(dialogue, "cash_register")
+
+
+func _on_vincent_pressed() -> void:
+	%Interface.start(dialogue, "vincenzo", [{"scene" : self}])
