@@ -18,6 +18,7 @@ Narrator: A gorgeous painting. Clearly the work of a master. => END
 
 ~ rita
 do scene.show_rita()
+Narrator: Rita, the housekeeper. She’s been in between different service industry jobs for some years after attending college. She graduated with a degree in history and music and hasn’t been able to find a job in either area of study.
 Rin: Sorry, I hope I’m not in the way.
 Rita: Are you meant to be here?
 - Yes, I am a detective investigating the circumstances around Tessa’s death.
@@ -37,7 +38,9 @@ Rita: I can give you a couple of minutes, no more than that.
 	set locals.time = true
 	Rita: On my lunch break. So when it was interrupted with a clean-up call, you can imagine how displeased I was.
 	Rin: Where did you eat your lunch?
-	Rita: In the kitchens. I usually eat there and chat with Heron. They’re a nervous wreck 24/7, but at least they sit there and listen to me complain. => questions
+	Rita: In the kitchens. I usually eat there and chat with Heron. They’re a nervous wreck 24/7, but at least they sit there and listen to me complain. 
+	Rin: Were both of you there the whole time?
+	Rita: Pretty much. About halfway through my break, Heron left to go to the bathroom and took his sweet time coming back. But otherwise, I never left the kitchens. => questions
 - Do you know anything about how often Tessa was in her room versus the greenhouse?
 	set locals.greenhouse = true
 	Rita: You’re lucky this is the off-season. Any other time of year and I would lose my mind telling you how I don’t care to keep track of people’s daily schedules. 
