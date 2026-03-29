@@ -92,6 +92,7 @@ Label/styles/focus = SubResource("StyleBoxFlat_vnc4k")
 Label/styles/normal = SubResource("StyleBoxEmpty_x127s")
 Panel/styles/panel = ExtResource("3_sc6n0")
 PanelContainer/styles/panel = ExtResource("3_sc6n0")
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/font_sizes/bold_font_size = 25
 RichTextLabel/font_sizes/bold_italics_font_size = 25
 RichTextLabel/font_sizes/italics_font_size = 25

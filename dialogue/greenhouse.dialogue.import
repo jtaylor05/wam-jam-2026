@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnt7m6v7tgfq3"
+path="res://.godot/imported/greenhouse.dialogue-df136d06308f879b5eff43ff838cd935.tres"
+
+[deps]
+
+source_file="res://dialogue/greenhouse.dialogue"
+dest_files=["res://.godot/imported/greenhouse.dialogue-df136d06308f879b5eff43ff838cd935.tres"]
+
+[params]
+
+defaults=true

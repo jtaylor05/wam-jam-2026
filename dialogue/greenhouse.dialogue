@@ -1,0 +1,47 @@
+~ hyralia
+Narrator: You take a big sniff. It smells nice.
+=> END
+
+~ trough
+Narrator: You feel the soft, rich soil coat your hands in a layer of dirt. It feels cool and… satisfying, somehow.
+=> END
+
+~ pipes
+Narrator: These pipes are familiar… they appear to be identical to the ones you saw in the basement.
+=> END
+
+~ georgina
+Narrator: Georgina, the gardener. She attended college, graduating with an environmental studies degree.
+Rin: Hi, sorry to disturb you. I’m Rin.
+Narrator: Georgina looks up with an exhausted expression as though a thousand years of grief rested entirely upon her.
+Georgina: Hi, nice to meet you. Wait, how did you get in?
+Rin: My friend’s key. I take it you’re Georgina?
+Georgina: Yes, I am. You knew Tessa?
+Rin: We were quite close, yes. I’m also investigating the circumstances surrounding her passing, so I was wondering if I could ask a few questions?
+~ questions
+Georgina: Of course. Any friend of Tessa’s is a friend of mine.
+- How come you were not here to witness the accident?
+	Georgina: Not that I would ever want to see such a thing, but I regret not being here for her. I had just left to deliver a basket of veggies to the kitchen and in the time I was gone… oh gosh.
+	Rin: I’m sorry you had to witness such a thing.
+	Georgina: Yeah[speed=0.1]…
+	=> questions
+- Did you notice anything off upon entering the greenhouse at or after the time of death?
+	Georgina: Now that you mention it… maybe I did. It was so hot and humid in here, I felt lightheaded and nauseous. I thought it was because of what I saw that I felt ill, so I left and didn’t think that much about it. 
+	By the time I was able to even return to the greenhouse the next day, it felt normal again.
+	Rin: Does it ever feel like that?
+	Georgina: No! Even when the system resets, it feels quite cool for a bit since the heating shuts off for a few minutes.
+	Rin: What could have caused the system to overheat the greenhouse?
+	Georgina: I’m not sure. It’s possible Tessa could have made a mistake, but she was so meticulous, I don’t think she would have.
+	=> questions
+- Is there anything else you think I should know?
+	Georgina: Honestly, if you’re thinking there could be foul play, I just don’t know who would’ve done it. Everyone here is so nice—though I don’t know much about our summer hire, Vincent. Still, he seems too much in his own head to have done this.
+	Rin: Has anyone acted out of the ordinary since Tessa’s arrival?
+	Georgina: Hmmm. Maybe not that anyone has acted out of the ordinary, but there’s been a change in circumstance.
+	Rin: What do you mean?
+	Georgina: Well, the estate has been looking to hire an additional gardener, and Tessa was their most promising candidate. That’s partly why they agreed to let her do research here. So… I suppose it’s possible that someone who wanted that position might’ve wanted her out of the way or wanted to steal her research. I just don’t know who would do this or who else was applying.
+	Rin: This may be among the most helpful information I’ve learned thus far. Thank you.
+Georgina: Of course. Though I appreciate your efforts, I really hope nobody did this on purpose.
+Rin: I hope so too.
+=> END
+
+

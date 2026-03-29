@@ -1,5 +1,5 @@
 ~ start
-Narrator: [speed=1.5] It’s the first sunny day Garrothill has seen in a while. The warmth almost tickles your bones—or perhaps that’s just unease. Despite the laughter of everyone around you, the letter you hold in your hands would be better read on a [shake rate=20 level=10]stormy night[/shake]. At least, then, everyone else would feel some melancholy with you.
+Narrator: [speed=1.5] It’s the first sunny day Garrothill has seen in a while. The warmth almost tickles your bones—or perhaps that’s just unease. Despite the laughter of everyone around you, the email before you would be better read on a [shake rate=20 level=10]stormy night[/shake]. At least, then, everyone else would feel some melancholy with you.
 # do throw up letter text box
 do GameState.set_state_value("initial_letter", true)
 Narrator: As you read, it becomes blurry from the tears. The rest isn’t important, really. Just funerary location and transportation. 

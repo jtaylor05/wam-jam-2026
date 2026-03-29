@@ -1,17 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bw380mwj5bhid"]
 
 [ext_resource type="Script" uid="uid://bfrchibu405lr" path="res://scripts/scene_script_instances/lobby.gd" id="1_nqcc7"]
+[ext_resource type="Texture2D" uid="uid://cd3xpcgpkws1t" path="res://textures/vince.png" id="2_apkv3"]
 [ext_resource type="Resource" uid="uid://c0sr6eyx3gv10" path="res://dialogue/lobby.dialogue" id="2_nqcc7"]
 [ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_apkv3"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_pc087"]
 [ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_nqcc7"]
-
-[sub_resource type="Gradient" id="Gradient_kf68i"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 0.6039216)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8g3do"]
-gradient = SubResource("Gradient_kf68i")
+[ext_resource type="Texture2D" uid="uid://chixaj4kt5u7x" path="res://textures/backgrounds-1.png" id="4_omrgh"]
 
 [node name="AreaInstance" type="Control"]
 layout_mode = 3
@@ -21,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nqcc7")
+vincenzo = ExtResource("2_apkv3")
 dialogue = ExtResource("2_nqcc7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -30,7 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_8g3do")
+texture = ExtResource("4_omrgh")
+expand_mode = 1
 
 [node name="GameUi" parent="." instance=ExtResource("3_apkv3")]
 unique_name_in_owner = true
@@ -47,11 +44,10 @@ visible = false
 [node name="BellButton" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 458.0
-offset_top = 135.0
-offset_right = 496.0
-offset_bottom = 166.0
-text = "Bell"
+offset_left = 547.0
+offset_top = 369.0
+offset_right = 585.0
+offset_bottom = 400.0
 
 [node name="TypewriterButton" type="Button" parent="."]
 layout_mode = 0
@@ -63,20 +59,17 @@ text = "Typewriter"
 
 [node name="CashRegisterButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 852.0
-offset_top = 78.0
-offset_right = 860.0
-offset_bottom = 86.0
-text = "Cash Register"
+offset_left = 1032.0
+offset_top = 376.0
+offset_right = 1118.0
+offset_bottom = 458.0
 
 [node name="VincentButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 559.0
-offset_top = 192.0
-offset_right = 627.0
-offset_bottom = 223.0
-text = "Vincent
-"
+offset_left = 434.0
+offset_top = 307.0
+offset_right = 497.0
+offset_bottom = 387.0
 
 [connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
 [connection signal="pressed" from="BellButton" to="." method="_on_bell_pressed"]

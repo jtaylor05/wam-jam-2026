@@ -2,16 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cqtgl8t8hxwtg" path="res://scripts/scene_script_instances/kitchen.gd" id="1_v3ycp"]
 [ext_resource type="Resource" uid="uid://b7ler4kndpshi" path="res://dialogue/kitchen.dialogue" id="2_bems3"]
+[ext_resource type="Texture2D" uid="uid://cltksf01i6yff" path="res://textures/heron.png" id="2_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_v3ycp"]
+[ext_resource type="Texture2D" uid="uid://bjdojvgailnal" path="res://textures/backgrounds-3.png" id="4_58u3k"]
 [ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_bems3"]
-
-[sub_resource type="Gradient" id="Gradient_kf68i"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 0.6039216)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8g3do"]
-gradient = SubResource("Gradient_kf68i")
 
 [node name="AreaInstance" type="Control"]
 layout_mode = 3
@@ -21,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v3ycp")
+heron = ExtResource("2_g3o0j")
 dialogue = ExtResource("2_bems3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -30,7 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_8g3do")
+texture = ExtResource("4_58u3k")
+expand_mode = 1
 
 [node name="GameUi" parent="." instance=ExtResource("3_g3o0j")]
 unique_name_in_owner = true
@@ -46,43 +43,40 @@ visible = false
 
 [node name="StovetopButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 261.0
-offset_top = 93.0
-offset_right = 337.0
-offset_bottom = 124.0
-text = "stovetop"
+offset_left = 450.0
+offset_top = 349.0
+offset_right = 572.0
+offset_bottom = 380.0
 
 [node name="CountertopButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 184.0
-offset_right = 251.0
-offset_bottom = 215.0
-text = "Countertop"
+offset_left = 393.0
+offset_top = 405.0
+offset_right = 790.0
+offset_bottom = 470.0
 
 [node name="CalendarButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 114.0
-offset_right = 573.0
-offset_bottom = 145.0
+offset_left = 525.0
+offset_top = 222.0
+offset_right = 610.0
+offset_bottom = 253.0
 text = "Calendar"
 
 [node name="HerbButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 368.0
-offset_top = 253.0
+offset_top = 227.0
 offset_right = 485.0
-offset_bottom = 284.0
+offset_bottom = 258.0
 text = "Bowl of Herbs"
 
 [node name="HeronButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 581.0
-offset_top = 190.0
-offset_right = 666.0
-offset_bottom = 221.0
-text = "Heron"
+offset_left = 723.0
+offset_top = 272.0
+offset_right = 808.0
+offset_bottom = 402.0
 
 [connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
 [connection signal="pressed" from="StovetopButton" to="." method="_on_stovetop_pressed"]

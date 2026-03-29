@@ -1,6 +1,6 @@
 extends VisualNovelInstance
 
-@export var rita := preload("res://artwork/icon.svg")
+@export var rita : Texture2D = preload("res://artwork/icon.svg")
 
 func show_rita() -> void:
 	%Interface.set_character_spot(2, rita)
