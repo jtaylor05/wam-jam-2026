@@ -38,8 +38,8 @@ Jeff: Now go on with your questions, I’ll answer them the best I can.
 	Rin: She was extremely dedicated to her work, yes. Does anyone else come down here?
 	Jeff: Only Rita and Heron. Rita because she has to be able to clean up every once in a while, and Heron to grab wine for the kitchen. => questions
 - Alright, that should be all I have for you. Anything else you can tell me?
-Jeff: Not that I can think of.
-Rin: Then I thank you for your time and cooperation.
+Jeff: Not that I can think of… although maybe this could be helpful to you. Tessa and Georgina were the only ones with keys to the greenhouse. It’s usually kept locked, even when someone’s inside, just to make sure guests or unapproved staff can’t wander in.
+Rin: That’s certainly good to know. Then I thank you for your time and cooperation.
 Jeff: I do what I can. Best of luck with your investigation.
 do scene.hide_jeff()
 => END
