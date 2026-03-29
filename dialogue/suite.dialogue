@@ -22,7 +22,8 @@ Narrator: Rita, the housekeeper. She’s been in between different service indus
 Rin: Sorry, I hope I’m not in the way.
 Rita: Are you meant to be here?
 - Yes, I am a detective investigating the circumstances around Tessa’s death.
-	Rita: I see. I was going to send along her belongings to her family, but I don’t suppose you’ll be wanting to take a look? => questions
+	Rita: I see. I was going to send along her belongings to her family, but I don’t suppose you’ll be wanting to take a look? 
+	Rin: Yes, actually. I would very much like to do so. Do you mind if I also ask you a couple of questions? => questions
 - Funny you should ask. Not really, but Tessa was my friend.
 	Rita: Then perhaps you can take the luggage to her family and give me some space to clean this room.
 	Rin: I can absolutely take that suitcase off your hands. Could I have a moment of your time to ask a few questions? => questions
