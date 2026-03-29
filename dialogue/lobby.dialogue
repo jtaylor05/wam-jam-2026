@@ -28,7 +28,8 @@ do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings
 => END
 
 ~ vincenzo
-Narrator: Vincenzo tries his best to fix his posture upon your approach. 
+Narrator: Vincenzo. The receptionist and current second-year college student. He remains undeclared in area of study, but is part of the marching band.
+Narrator: The boy tries his best to fix his posture upon your approach. 
 Vincenzo: Hi there, welcome to Primrose Holiday Retreat. What can I do for you?
 Narrator: You cross your arms and take a deep breath. 
 Rin: I’m a detective hired to investigate the circumstances around Tessa’s death. It’s for her family, you know? I understand they declared it an allergic reaction, but I need to have some things to tell her parents. Do you mind if I ask a few questions? 
