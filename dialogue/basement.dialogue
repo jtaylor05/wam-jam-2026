@@ -8,7 +8,11 @@ Smells oak-y with a hint of alcohol. This is certainly some wine.
 
 ~ jeff
 do scene.show_jeff()
+<<<<<<< HEAD
 Narrator: Jeff, their mechanic and electrician. He used to do similar work for various companies before finding a permanent position here.
+=======
+Narrator: Jeff, their mechanic and electrician. You recall from your quick online research he used to do similar work for various companies before finding a permanent position here.
+>>>>>>> 062bac61d5e6012735fb1b416c325133f33e4d2e
 Jeff: Hey there, how can I help you?
 Rin: Hi, I’m Rin, private detective. I’m looking into the circumstances of Tessa’s passing on behalf of her family. Do you mind if I ask you some questions?
 Jeff: Of course, I don’t mind one bit. Though, before you go on, you said your name is Rin?
@@ -40,8 +44,6 @@ Jeff: Now go on with your questions, I’ll answer them the best I can.
 - Alright, that should be all I have for you. Anything else you can tell me?
 Jeff: Not that I can think of... [wait=1.0] although maybe this could be helpful to you. Tessa and Georgina were the only ones with keys to the greenhouse. It’s usually kept locked, even when someone’s inside, just to make sure guests or unapproved staff can’t wander in.
 Rin: That’s certainly good to know. Then I thank you for your time and cooperation.
-
-Rin: Then I thank you for your time and cooperation.
 Jeff: I do what I can. Best of luck with your investigation.
 do scene.hide_jeff()
 => END

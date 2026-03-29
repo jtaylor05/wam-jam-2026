@@ -29,7 +29,7 @@ do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings
 ~ vincenzo
 do scene.show_vincenzo()
 Narrator: Vincenzo. The receptionist and current second-year college student. He remains undeclared in area of study, but is part of the marching band.
-Narrator: Vincenzo tries his best to fix his posture upon your approach. 
+Narrator: The boy tries his best to fix his posture upon your approach. 
 if GameState.get_state_value("vince_annoyed")
 	Vincenzo: Can I help you?
 else
@@ -51,7 +51,6 @@ Vincenzo: The cops already asked me a bunch of stuff, but sure I can try and ans
 	Vincenzo: Well, I was eating my lunch with Jeff—he comes and sits with me for lunch sometimes—when one of the other staff comes over and asks me to tell Rita we needed clean-up by the greenhouse.
 	Rin: Do you remember who?
 	Vincenzo: I don’t really know the others that well. Just Jeff because we hang out, and Rita only by name.
-
 	=> questions
 
 - [if not GameState.get_state_value("suite_open")] Is there any chance I could have the key to the suite Tessa stayed in? [else] Thats all. [/if]
