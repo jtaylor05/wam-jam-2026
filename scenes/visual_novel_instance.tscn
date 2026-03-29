@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuji7qnqh07dr"]
+[gd_scene load_steps=8 format=3 uid="uid://cuji7qnqh07dr"]
 
 [ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_qyi8q"]
 [ext_resource type="Resource" uid="uid://bxxo4dfwytb66" path="res://dialogue/test.dialogue" id="2_xaga8"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_dq8xt"]
+[ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_xaga8"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_dq8xt"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
 offsets = PackedFloat32Array(0)
@@ -31,6 +33,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
+[node name="GameUi" parent="." instance=ExtResource("3_xaga8")]
+unique_name_in_owner = true
+
+[node name="MenuUI" parent="." instance=ExtResource("4_dq8xt")]
+unique_name_in_owner = true
+visible = false
+
 [node name="Interface" parent="." instance=ExtResource("3_dq8xt")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
+
+[editable path="GameUi"]

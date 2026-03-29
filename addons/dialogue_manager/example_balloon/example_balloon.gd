@@ -72,6 +72,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 
 func _ready() -> void:
+	clear_all_characters()
+	
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -171,6 +173,21 @@ func apply_dialogue_line() -> void:
 func next(next_id: String) -> void:
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(next_id, temporary_game_states)
 
+func set_character_spot(idx : int, character_tex : Texture2D) -> void:
+	match idx:
+		0:
+			%TextureRect1.texture = character_tex
+		1:
+			%TextureRect2.texture = character_tex
+		2:
+			%TextureRect3.texture = character_tex
+
+func clear_character_spot(idx : int) -> void:
+	set_character_spot(idx, null)
+
+func clear_all_characters() -> void:
+	for idx in range(3):
+		clear_character_spot(idx)
 
 #region Signals
 
@@ -213,5 +230,12 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
+
+func _on_started_typing() -> void:
+	%AudioStreamPlayer.play()
+
+
+func _on_finished_typing() -> void:
+	%AudioStreamPlayer.stop()
 
 #endregion

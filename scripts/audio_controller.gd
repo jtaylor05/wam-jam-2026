@@ -30,7 +30,7 @@ func _play_on_worker(stream_data : StreamData) -> bool:
 		_active_workers.append(worker)
 		return true
 	if _worker_pool.size() < MAX_WORKERS:
-		var worker : AudioWorker = AudioWorker.new(stream_data.stream, WORKER_TIMEOUT, stream_data.tag)
+		var worker : AudioWorker = AudioWorker.new(stream_data.stream, WORKER_TIMEOUT, stream_data.tag, stream_data.bus)
 		add_child(worker)
 		_active_workers.append(worker)
 		worker.finished.connect(func():

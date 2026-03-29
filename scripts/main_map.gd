@@ -4,9 +4,10 @@ func _init() -> void:
 	visibility_changed.connect(_visibility_changed)
 
 func _visibility_changed() -> void:
+	%KitchenButton.disabled = false if GameState.get_state_value("kitchen_open") else true
 	%SuiteButton.disabled = false if GameState.get_state_value("suite_open") else true
 	%GreenhouseButton.disabled = false if GameState.get_state_value("greenhouse_open") else true
-	%BasementButton.disabled = false if GameState.get_state_value("suite_open") else true
+	%BasementButton.disabled = false if GameState.get_state_value("basement_open") else true
 
 func open_lobby() -> void:
 	get_tree().paused = false

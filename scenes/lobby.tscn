@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw380mwj5bhid"]
+[gd_scene load_steps=8 format=3 uid="uid://bw380mwj5bhid"]
 
 [ext_resource type="Script" uid="uid://bfrchibu405lr" path="res://scripts/scene_script_instances/lobby.gd" id="1_nqcc7"]
 [ext_resource type="Resource" uid="uid://c0sr6eyx3gv10" path="res://dialogue/lobby.dialogue" id="2_nqcc7"]
+[ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_apkv3"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_pc087"]
-[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="4_nqcc7"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_nqcc7"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
 offsets = PackedFloat32Array(0)
@@ -31,11 +32,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
-[node name="MainUi" parent="." instance=ExtResource("4_nqcc7")]
+[node name="GameUi" parent="." instance=ExtResource("3_apkv3")]
+unique_name_in_owner = true
+layer = 0
+
+[node name="MenuUI" parent="." instance=ExtResource("4_nqcc7")]
+unique_name_in_owner = true
 visible = false
 
 [node name="Interface" parent="." instance=ExtResource("3_pc087")]
 unique_name_in_owner = true
+visible = false
 
 [node name="BellButton" type="Button" parent="."]
 unique_name_in_owner = true
@@ -62,6 +69,9 @@ offset_right = 860.0
 offset_bottom = 86.0
 text = "Cash Register"
 
+[connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
 [connection signal="pressed" from="BellButton" to="." method="_on_bell_pressed"]
 [connection signal="pressed" from="TypewriterButton" to="." method="_on_typewriter_pressed"]
 [connection signal="pressed" from="CashRegisterButton" to="." method="_on_cash_register_pressed"]
+
+[editable path="GameUi"]

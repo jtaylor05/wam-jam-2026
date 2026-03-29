@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bawqlolxjhj28"]
+[gd_scene load_steps=8 format=3 uid="uid://bawqlolxjhj28"]
 
-[ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_wy1pe"]
-[ext_resource type="Resource" uid="uid://bxxo4dfwytb66" path="res://dialogue/test.dialogue" id="2_hc2hy"]
+[ext_resource type="Script" uid="uid://dlphbvq76ut7v" path="res://scripts/scene_script_instances/basement.gd" id="1_wiqa1"]
+[ext_resource type="Resource" uid="uid://dbgh6rmh1324j" path="res://dialogue/basement.dialogue" id="2_wiqa1"]
+[ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_1ctny"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_wiqa1"]
-[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="4_hc2hy"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_hc2hy"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
 offsets = PackedFloat32Array(0)
@@ -19,9 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wy1pe")
-dialogue = ExtResource("2_hc2hy")
-start_name = "start"
+script = ExtResource("1_wiqa1")
+dialogue = ExtResource("2_wiqa1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,9 +32,45 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
-[node name="MainUi" parent="." instance=ExtResource("4_hc2hy")]
+[node name="GameUi" parent="." instance=ExtResource("3_1ctny")]
+unique_name_in_owner = true
+layer = 0
+
+[node name="MenuUI" parent="." instance=ExtResource("4_hc2hy")]
+unique_name_in_owner = true
 visible = false
 
 [node name="Interface" parent="." instance=ExtResource("3_wiqa1")]
 unique_name_in_owner = true
 visible = false
+
+[node name="MachineButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 58.0
+offset_right = 346.0
+offset_bottom = 89.0
+text = "Machinery"
+
+[node name="BarrelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 55.0
+offset_right = 606.0
+offset_bottom = 86.0
+text = "Wine Barrel"
+
+[node name="JeffButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 151.0
+offset_right = 517.0
+offset_bottom = 182.0
+text = "Jeff"
+
+[connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
+[connection signal="pressed" from="MachineButton" to="." method="_on_machine_pressed"]
+[connection signal="pressed" from="BarrelButton" to="." method="_on_barrel_pressed"]
+[connection signal="pressed" from="JeffButton" to="." method="_on_jeff_pressed"]
+
+[editable path="GameUi"]

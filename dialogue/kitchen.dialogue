@@ -1,0 +1,48 @@
+~ stovetop
+Narrator: You wipe your finger across the glassy surface. Squeaky clean! => END
+
+~ countertops
+Narrator: Not a speck of dust. Maybe some carrot stains though. => END
+
+~ calendar
+Narrator: This appears to be a list of shifts, including people’s lunch breaks.
+# do show schedule
+Narrator: You can think of some new questions to ask because of this.
+do GameState.set_state_value("shift_calendar", true)
+
+~ bowl_herbs
+Narrator: They smell quite strong, as though picked this morning. Somebody must have brought them recently.
+
+~ heron
+do scene.show_heron()
+Rin: Hey there. I don’t suppose I could ask you a few questions? I’m a detective looking into Tessa’s passing.
+Heron: O-oh sure. Um, wasn’t that an accident?
+Rin: Yes, but I was hired by her family. You know how families can be.
+Heron: For sure, yeah. I understand. I hope you, uh, you won’t have to spend too much time here, ya know? Sounds like they’re paying you to take, uh, take a vacation. [wave amp=25 freq=5]Heh [wait=0.5]heh…[wait=0.5]heh.[/wave]
+Rin: Ha! That would be the dream. Now, are you comfortable with a couple of questions?
+~ questions
+Heron: Yes—yes of course.
+- What do you know about the accident?
+	Heron: Only that, um, that Georgina found her in the greenhouse. I would ask her about it. Or uh, actually I wouldn’t. She’s not taking it very well.
+	if GameState.get_state_value("rita_first")
+		- I thought Rita found her first?
+			Heron: Uhh, Georgina found her, but then she felt ill and had to leave the scene. So Rita probably thought no one else had been yet.
+		- Did Georgina call for help?
+			Heron: Not initially, by the time she—she would have, Rita already had.
+	=> questions
+- Where were you at the time of death?
+	Heron: Just here helping the head chef prepare lunch. Oh, and talking to Rita. She was on break. => questions
+- How often did Tessa come to the kitchens?
+	Heron: Only to get my copy of the basement key, usually, and to grab lunch at noon.
+	Rin: Alright then, a related question, if you please: What did she need to go into the basement for?
+	Heron: Greenhouse controls. She had to adjust the temperature and humidity to study how well her flower thrived in various environments.
+	=> questions
+- Alright, thank you for your inputs.
+Heron: Sure... heh
+if not GameState.get_state_value("basement_open"):
+	Rin:  Would it be possible for me to have temporary access to the basement? Just to take a look around.
+	Heron: Of course, here. I don’t need it right now. I hope the rest of your investigation goes, uh, goes well.
+do GameState.set_state_value("basement_open", true)
+do scene.hide_heron()
+=> END
+

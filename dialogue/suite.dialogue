@@ -1,0 +1,58 @@
+~ journal
+Narrator: The lock on the suitcase pops open with a small click. Looking through her stuff, only her floral journal seems interesting.
+do GameState.set_state_value("suitcase_open", true)
+Narrator: You read several pages of notes on this yellow flower she was studying, and then the final written page reads:
+	# do show tessa's journal
+Narrator: You also find tucked away a simple brown key. It must be for the greenhouse.
+do GameState.set_state_value("greenhouse_open")
+=> END
+
+~ wardrobe
+Narrator: Nothing but clothes. => END
+
+~ bed
+Narrator: Looks comfy, but not much here. => END
+
+~ painting
+Narrator: A gorgeous painting. Clearly the work of a master. => END
+
+~ rita
+do scene.show_rita()
+Rin: Sorry, I hope I’m not in the way.
+Rita: Are you meant to be here?
+- Yes, I am a detective investigating the circumstances around Tessa’s death.
+	Rita: I see. I was going to send along her belongings to her family, but I don’t suppose you’ll be wanting to take a look? => questions
+- Funny you should ask. Not really, but Tessa was my friend.
+	Rita: Then perhaps you can take the luggage to her family and give me some space to clean this room.
+	Rin: I can absolutely take that suitcase off your hands. Could I have a moment of your time to ask a few questions? => questions
+~ questions
+Rita: I can give you a couple of minutes, no more than that.
+- What have you heard about the accident?
+	set locals.accident = true
+	set GameState.set_state_value("rita_first", true)
+	Rita: Not much heard so much as seen with my own eyes. I was the one who found her. I got called down to the greenhouse to do “clean-up,” which I usually schedule every couple of weeks, and was met with a sight I hope not to see again.
+	Rin: Follow up question, then: Was this your normally scheduled cleaning?
+	Rita: No, not at all. It was the off-week. I certainly found it odd, but I figured it must have been a spill or something unusual. I didn’t imagine this. => questions
+- Where were you at the time of death?
+	set locals.time = true
+	Rita: On my lunch break. So when it was interrupted with a clean-up call, you can imagine how displeased I was.
+	Rin: Where did you eat your lunch?
+	Rita: In the kitchens. I usually eat there and chat with Heron. They’re a nervous wreck 24/7, but at least they sit there and listen to me complain. => questions
+- Do you know anything about how often Tessa was in her room versus the greenhouse?
+	set locals.greenhouse = true
+	Rita: You’re lucky this is the off-season. Any other time of year and I would lose my mind telling you how I don’t care to keep track of people’s daily schedules. 
+	Rita: However, because she is practically the only person—and the most interesting—who has been staying here, I can tell you a bit. 
+	Rita: She always ate breakfast and dinner in her room. 6am and 6pm. I know because I would have to bring her these meals. Lunch, I’m not so sure. 
+	Rita: Almost every other spare moment was between the basement and the greenhouse. Even late at night you could find her in the greenhouse. 
+	Rita: That’s all I really know. => questions
+- Thank you for humoring me with my questions… is there anything else you can tell me?
+Rita: No, that’s pretty much everything. Good luck with that suitcase—it’s locked up tight.
+Rin: Thank you.
+do scene.hide_rita()
+=> END
+
+~ clock
+Narrator: There is a glimmer underneath the clock.
+Narrator: Seems to be a swipecare. It says "Kitchen" on the front.
+do GameState.set_state_value("kitchen_open", true)
+=> END

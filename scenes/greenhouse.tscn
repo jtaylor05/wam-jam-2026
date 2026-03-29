@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_fc18y"]
 [ext_resource type="Resource" uid="uid://bxxo4dfwytb66" path="res://dialogue/test.dialogue" id="2_a8eqe"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_xva60"]
-[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="4_a8eqe"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_a8eqe"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
 offsets = PackedFloat32Array(0)

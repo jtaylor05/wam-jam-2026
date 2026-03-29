@@ -1,6 +1,7 @@
 ~ start
 Narrator: [speed=1.5] It’s the first sunny day Garrothill has seen in a while. The warmth almost tickles your bones—or perhaps that’s just unease. Despite the laughter of everyone around you, the letter you hold in your hands would be better read on a [shake rate=20 level=10]stormy night[/shake]. At least, then, everyone else would feel some melancholy with you.
 # do throw up letter text box
+do GameState.set_state_value("initial_letter", true)
 Narrator: As you read, it becomes blurry from the tears. The rest isn’t important, really. Just funerary location and transportation. 
 Narrator: But… you never knew Tessa to have allergies… right? All of her work was to do with botany. Perhaps this rare flower was more deadly than anyone knew. Was this Auntie Lynna’s handwriting? Was she always this overprotective of her daughter? You cannot recall clearly. Blinking away the fog in your mind, a new determination floods you. You had hung up your investigative coat many years ago. Perhaps it was time to don it again for your friend—and for old time’s sake.
 # do move scene background

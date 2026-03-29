@@ -1,0 +1,48 @@
+~ machinery
+This looks like it has something to do with humidity and temperature regulation, but not for the house.
+=> END
+
+~ wine_barrel
+Smells oak-y with a hint of alcohol. This is certainly some wine. 
+=> END
+
+~ jeff
+do scene.show_jeff()
+Jeff: Hey there, how can I help you?
+Rin: Hi, I’m Rin, private detective. I’m looking into the circumstances of Tessa’s passing on behalf of her family. Do you mind if I ask you some questions?
+Jeff: Of course, I don’t mind one bit. Though, before you go on, you said your name is Rin?
+Rin: That’s right.
+Narrator: Jeff digs around in his pocket. 
+Jeff: Tessa asked me to give this to you, should you come by.
+# do show paper note
+do GameState.set_state_value("tessa_note", true)
+Rin: ...thank you. This means a lot to me.
+Jeff: Of course. She was a really kind, gentle soul. It broke my heart when I heard what happened to her.
+Rin: That’s why I’m here. I want to ensure that there could have been no foul play, if any.
+Jeff: Right. I’d do the same if I had the skills. 
+~ questions
+Jeff: Now go on with your questions, I’ll answer them the best I can.
+- How much do you know about the accident?
+	Jeff: Only what you’ve already heard.
+	Rin: You didn’t hear or see anything?
+	Jeff: No. Whether fortunately or unfortunately, I cannot say. => questions
+- Where were you at the time of death?
+	Jeff: I think I was on my lunch break when it happened. Usually I try to keep that young kid upstairs company. He seems to be having a hard time, so we eat lunch together in the lobby whenever our breaks overlap.
+	Rin: So you weren’t anywhere near the greenhouse, then?
+	Jeff: No, I wasn’t at my usual station. I also like to make sure the greenhouse system does its daily reset when I go on break.
+	Rin: That’s interesting. What does it do when it resets?
+	Jeff: It just shuts off for a few minutes then comes back on. It doesn’t do any harm to the plants and it makes sure everything is running smoothly. => questions
+- I’ve heard Tessa came down here often?
+	Jeff: Yes, to mess with the greenhouse temperature and humidity. She was researching and experimenting on that hyralia flower. Quite obsessed with it, I must say, but in an endearing manner.
+	Rin: She was extremely dedicated to her work, yes. Does anyone else come down here?
+	Jeff: Only Rita and Heron. Rita because she has to be able to clean up every once in a while, and Heron to grab wine for the kitchen. => questions
+- Alright, that should be all I have for you. Anything else you can tell me?
+Jeff: Not that I can think of.
+Rin: Then I thank you for your time and cooperation.
+Jeff: I do what I can. Best of luck with your investigation.
+do scene.hide_jeff()
+=> END
+
+
+
+

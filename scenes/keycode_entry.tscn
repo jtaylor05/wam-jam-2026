@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcqn4u2eji8c1"]
+
+[ext_resource type="Script" uid="uid://duo38wgloh0f4" path="res://scripts/keycode/keycode_entry.gd" id="1_5jw6b"]
+[ext_resource type="Script" uid="uid://bmmgrkmha472i" path="res://scripts/keycode/single_dial.gd" id="1_bi72d"]
+
+[node name="KeycodeEntry" type="CanvasLayer" node_paths=PackedStringArray("dial_template")]
+script = ExtResource("1_5jw6b")
+target = "0519"
+dial_template = NodePath("Control/DialContainer/ExampleDial")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialContainer" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExampleDial" type="VBoxContainer" parent="Control/DialContainer"]
+layout_mode = 2
+script = ExtResource("1_bi72d")
+
+[node name="Polygon2D" type="Polygon2D" parent="Control/DialContainer/ExampleDial"]
+position = Vector2(25, 21)
+polygon = PackedVector2Array(16.60946, 8.304746, -16.6095, 8.304746, 1.10421615e-05, -16.609474)
+uv = PackedVector2Array(-48, 0, -112, 0, -79.99994, -48)
+
+[node name="TextureButton" type="TextureButton" parent="Control/DialContainer/ExampleDial"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/DialContainer/ExampleDial"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/DialContainer/ExampleDial/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialValue" type="Label" parent="Control/DialContainer/ExampleDial/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Control/DialContainer/ExampleDial"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Polygon2D2" type="Polygon2D" parent="Control/DialContainer/ExampleDial"]
+position = Vector2(25, 108)
+polygon = PackedVector2Array(-16.361937, -8.18096, 16.361937, -8.180964, -2.7236621e-05, 16.361942)
+uv = PackedVector2Array(-48, 0, -112, 0, -79.99994, -48)
+
+[connection signal="pressed" from="Control/DialContainer/ExampleDial/TextureButton" to="Control/DialContainer/ExampleDial" method="increase_value"]
+[connection signal="pressed" from="Control/DialContainer/ExampleDial/TextureButton2" to="Control/DialContainer/ExampleDial" method="decrease_value"]

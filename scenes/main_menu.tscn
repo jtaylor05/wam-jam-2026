@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://35das6fs20ui"]
+[gd_scene load_steps=6 format=3 uid="uid://35das6fs20ui"]
 
 [ext_resource type="Theme" uid="uid://0a1yt3dgu5k0" path="res://resources/main_theme.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://c5mrgyeybjwe4" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://b0stdiwj01i3r" path="res://scenes/settings_menu.tscn" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://4yaqcgx2lnmf" path="res://scripts/button_click.gd" id="3_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
 font_size = 60
@@ -69,11 +71,24 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "START"
+script = ExtResource("3_wu84c")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+script = ExtResource("3_wu84c")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/ButtonContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "QUIT"
+script = ExtResource("3_wu84c")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_bqqt6")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/MarginContainer/VBoxContainer/StartButton" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="quit"]

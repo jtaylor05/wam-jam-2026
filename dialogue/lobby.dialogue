@@ -18,7 +18,9 @@ match GameState.get_state_value("bell_dings")
 		Narrator: It dings. The boy looks at you, peeved.
 	when 4
 		Narrator: The boy takes the bell and puts it somewhere beneath the desk, out of reach. 
+		do scene.show_vincenzo()
 		Vincenzo: Can I help you? =>< vincenzo
+		do scene.hide_vincenzo()
 	when >= 5
 		do GameState.set_state_value("bell_dings", GameState.get_state_value("bell_dings") + 1)
 		=> END
@@ -45,5 +47,6 @@ Vincenzo: The cops already asked me a bunch of stuff, but sure I can try and ans
 
 - Is there any chance I could have the key to the suite Tessa stayed in?
 	Vincenzo: Sure, why not? No one is staying up there for another month anyway.
-	do GameState.set_state_value("key_323", true)
+	Narrator: He hands you a tagged key. The key reads "323" in bold letters.
+	do GameState.set_state_value("suite_open", true)
 	=> END

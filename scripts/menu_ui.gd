@@ -64,3 +64,9 @@ func close_map() -> void:
 		resume()
 		open_buttons()
 		map = false
+
+func _on_settings_button_pressed() -> void:
+	%SettingsMenu.visible = true
+
+func open_journal() -> void:
+	%JournalMenu.visible = true

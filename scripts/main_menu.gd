@@ -5,3 +5,6 @@ func start() -> void:
 
 func quit() -> void:
 	get_tree().quit()
+
+func _on_settings_button_pressed() -> void:
+	%SettingsMenu.visible = true

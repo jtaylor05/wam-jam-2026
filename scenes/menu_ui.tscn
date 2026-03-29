@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnimkqakl20md"]
+[gd_scene load_steps=8 format=3 uid="uid://cnimkqakl20md"]
 
-[ext_resource type="Script" uid="uid://m7wqp7mai187" path="res://scripts/main_ui.gd" id="1_513t2"]
+[ext_resource type="Script" uid="uid://m7wqp7mai187" path="res://scripts/menu_ui.gd" id="1_513t2"]
 [ext_resource type="PackedScene" uid="uid://b3mv6flbska53" path="res://scenes/main_map.tscn" id="1_fnul3"]
 [ext_resource type="Theme" uid="uid://0a1yt3dgu5k0" path="res://resources/main_theme.tres" id="2_e6fyy"]
+[ext_resource type="Script" uid="uid://4yaqcgx2lnmf" path="res://scripts/button_click.gd" id="3_oa3d6"]
+[ext_resource type="PackedScene" uid="uid://b0stdiwj01i3r" path="res://scenes/settings_menu.tscn" id="4_3y6qt"]
+[ext_resource type="PackedScene" uid="uid://cbt3ngb4f21uf" path="res://scenes/journal_menu.tscn" id="5_ld3xo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6a7c"]
 font_size = 45
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="MainUi" type="CanvasLayer"]
+[node name="MenuUI" type="CanvasLayer"]
 process_mode = 3
 layer = 101
 script = ExtResource("1_513t2")
@@ -63,21 +66,37 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "RESUME"
+script = ExtResource("3_oa3d6")
 
 [node name="MapButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "MAP"
+script = ExtResource("3_oa3d6")
+
+[node name="Button" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JOURNAL"
+script = ExtResource("3_oa3d6")
+
+[node name="SettingsButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+script = ExtResource("3_oa3d6")
 
 [node name="MenuButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "MAIN MENU"
+script = ExtResource("3_oa3d6")
 
 [node name="QuitButton" type="Button" parent="Control/ButtonContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "QUIT"
+script = ExtResource("3_oa3d6")
 
 [node name="MapContainer" type="MarginContainer" parent="Control"]
 unique_name_in_owner = true
@@ -101,13 +120,26 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 30
 text = "CLOSE"
+script = ExtResource("3_oa3d6")
 
 [node name="AreaInstance" parent="Control/MapContainer/VBoxContainer" instance=ExtResource("1_fnul3")]
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="SettingsMenu" parent="." instance=ExtResource("4_3y6qt")]
+unique_name_in_owner = true
+layer = 101
+visible = false
+
+[node name="JournalMenu" parent="." instance=ExtResource("5_ld3xo")]
+unique_name_in_owner = true
+layer = 102
+visible = false
+
 [connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="resume"]
 [connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/MapButton" to="." method="open_map"]
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/Button" to="." method="open_journal"]
+[connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/MenuButton" to="." method="to_menu"]
 [connection signal="pressed" from="Control/ButtonContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="quit"]
 [connection signal="pressed" from="Control/MapContainer/VBoxContainer/CloseButton" to="." method="close_map"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddjkheqtvepps"]
+[gd_scene load_steps=10 format=3 uid="uid://ddjkheqtvepps"]
 
-[ext_resource type="Script" uid="uid://cjrwjwybqgaw3" path="res://scripts/visual_novel_instance.gd" id="1_nafpu"]
-[ext_resource type="Resource" uid="uid://bxxo4dfwytb66" path="res://dialogue/test.dialogue" id="2_1t7l4"]
+[ext_resource type="Script" uid="uid://cyh1c2exf4gxb" path="res://scripts/scene_script_instances/suite.gd" id="1_g64o4"]
+[ext_resource type="Resource" uid="uid://tfpw0ashxc0s" path="res://dialogue/suite.dialogue" id="2_1t7l4"]
+[ext_resource type="PackedScene" uid="uid://bjwial54t8amy" path="res://scenes/game_ui.tscn" id="3_dav2q"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="3_g64o4"]
-[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/main_ui.tscn" id="4_1t7l4"]
+[ext_resource type="PackedScene" uid="uid://bcqn4u2eji8c1" path="res://scenes/keycode_entry.tscn" id="3_hi7em"]
+[ext_resource type="PackedScene" uid="uid://cnimkqakl20md" path="res://scenes/menu_ui.tscn" id="4_1t7l4"]
+[ext_resource type="Theme" uid="uid://0a1yt3dgu5k0" path="res://resources/main_theme.tres" id="4_hi7em"]
 
 [sub_resource type="Gradient" id="Gradient_kf68i"]
 offsets = PackedFloat32Array(0)
@@ -19,9 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nafpu")
+script = ExtResource("1_g64o4")
 dialogue = ExtResource("2_1t7l4")
-start_name = "start"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,9 +34,87 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8g3do")
 
-[node name="MainUi" parent="." instance=ExtResource("4_1t7l4")]
+[node name="KeycodeEntry" parent="." instance=ExtResource("3_hi7em")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CloseButton" type="Button" parent="KeycodeEntry"]
+offset_left = 547.0
+offset_top = 406.0
+offset_right = 602.0
+offset_bottom = 431.0
+theme = ExtResource("4_hi7em")
+text = "CLOSE"
+
+[node name="GameUi" parent="." instance=ExtResource("3_dav2q")]
+unique_name_in_owner = true
+layer = 0
+
+[node name="MenuUI" parent="." instance=ExtResource("4_1t7l4")]
+unique_name_in_owner = true
 visible = false
 
 [node name="Interface" parent="." instance=ExtResource("3_g64o4")]
 unique_name_in_owner = true
 visible = false
+
+[node name="WardrobeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 126.0
+offset_right = 306.0
+offset_bottom = 157.0
+text = "Wardrobe"
+
+[node name="BedButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 131.0
+offset_right = 463.0
+offset_bottom = 162.0
+text = "Bed"
+
+[node name="PaintingButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 132.0
+offset_right = 567.0
+offset_bottom = 163.0
+text = "Painting"
+
+[node name="RitaButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 168.0
+offset_right = 822.0
+offset_bottom = 199.0
+text = "Rita"
+
+[node name="ClockButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 257.0
+offset_right = 429.0
+offset_bottom = 288.0
+text = "Clock"
+
+[node name="SuitcaseButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 611.0
+offset_top = 282.0
+offset_right = 686.0
+offset_bottom = 313.0
+text = "Suitcase"
+
+[connection signal="answer_found" from="KeycodeEntry" to="." method="_on_keycode_answer_found"]
+[connection signal="pressed" from="KeycodeEntry/CloseButton" to="." method="_on_keycode_closed_pressed"]
+[connection signal="pressed" from="GameUi/Control/PanelContainer/HBoxContainer/MenuButton" to="." method="toggle_menu"]
+[connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
+[connection signal="pressed" from="BedButton" to="." method="_on_bed_pressed"]
+[connection signal="pressed" from="PaintingButton" to="." method="_on_painting_pressed"]
+[connection signal="pressed" from="RitaButton" to="." method="_on_rita_pressed"]
+[connection signal="pressed" from="ClockButton" to="." method="_on_clock_pressed"]
+[connection signal="pressed" from="SuitcaseButton" to="." method="_on_suitcase_pressed"]
+
+[editable path="GameUi"]

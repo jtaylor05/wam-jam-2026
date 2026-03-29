@@ -6,10 +6,11 @@ var _timeout_timer : Timer
 
 var tag : String
 
-func _init(new_stream : AudioStream, timeout : float, tag : String = "") -> void:
+func _init(new_stream : AudioStream, timeout : float, tag : String = "", bus : StringName = &"Master") -> void:
 	stream = new_stream
 	self.timeout = timeout
 	self.tag = tag
+	self.bus = bus
 	
 	finished.connect(_start_timeout)
 
